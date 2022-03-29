@@ -4,7 +4,24 @@
   "description": "my ferst project jest",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest-dev",
+    "coverage": "jest --collectCoverage",
+    "eslint": "eslint"
+  },
+  "jest": {
+    "verbose": true,
+    "collectCoverage": true,
+    "coverageReporters": ["html"],
+    "collectCoverageFrom": [
+        "**/*.{js,jsx}",
+        "!**/node_modules/**",
+        "!**/coverage/**"
+      ],
+    "coverageThreshold": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100
+    }
   },
   "repository": {
     "type": "git",
@@ -16,10 +33,16 @@
     "url": "https://github.com/amaslov-QA/7.3/issues"
   },
   "homepage": "https://github.com/amaslov-QA/7.3#readme",
-  "devDependencies": {
-    "jest": "^27.5.1"
-  },
-  "dependencies": {
-    "eslint": "^8.12.0"
+    "devDependencies": {
+      "eslint": "^8.12.0",
+      "jest": "^27.5.1",
+      "prettier": "^2.6.1"
+    },
+    "dependencies": {
+      "eslint-config-airbnb-base": "^15.0.0",
+      "eslint-config-prettier": "^8.5.0",
+      "eslint-plugin-prettier": "^4.0.0",
+      "eslint-plugin-unicorn": "^41.0.1"
+    }
   }
-}
+
